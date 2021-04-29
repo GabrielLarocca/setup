@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # antes de utilizar, rodar sudo chmod +x ./script.sh
 # depois rodar com sh ./script.sh
 # Chrome
