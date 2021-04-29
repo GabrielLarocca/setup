@@ -1,4 +1,5 @@
-# antes de utilizar, rodar chmod +x ./script.sh
+# antes de utilizar, rodar sudo chmod +x ./script.sh
+# depois rodar com sh ./script.sh
 # Chrome
 # Node
 # Npm
@@ -17,8 +18,7 @@ sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
 
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 
-sudo apt-get update
-sudo apt-get upgrade -y
+sudo apt-get update && apt-get upgrade -y
 
 clear
 
@@ -32,41 +32,31 @@ clear
 sudo npm install -g npm@latest
 sudo npm install -g yarn@latest
 
-echo "Node version "
-node --version
-echo "---------------------"
-echo "Npm version "
-npm --version
-echo "---------------------"
-echo "Yarn version "
-yarn --version
-
-
 sudo apt install curl -y
 clear
 echo "Curl instalado"
-curl --version
+
 
 sudo apt install git -y
 clear
 echo "Git instalado"
-git --version
 
 sudo apt install php libapache2-mod-php -y
 sudo systemctl restart apache2
 clear
 echo "PHP instalado"
-php -version
 
 sudo apt install htop -y
 clear
-echo "htop instalado"
 
-sudo apt-get install sublime-text -y
+sudo apt install dirmngr gnupg apt-transport-https ca-certificates software-properties-common
+curl -fsSL https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo add-apt-repository "deb https://download.sublimetext.com/ apt/stable/"
+sudo apt install sublime-text
 clear
 echo "Sublime instalado"
 
-sudo snap install postman -y
+sudo snap install postman
 clear
 echo "Postman instalado"
 
@@ -84,3 +74,54 @@ echo "Mysql server instalado"
 sudo snap install ngrok
 clear
 echo "ngrok instalado"
+clear
+
+echo "Node version "
+node --version
+
+echo "---------------------"
+echo "Npm version "
+npm --version
+
+echo "---------------------"
+echo "Yarn version "
+yarn --version
+
+echo "---------------------"
+echo "chrome version "
+google-chrome --version
+
+echo "---------------------"
+echo "curl version "
+curl --version
+
+echo "---------------------"
+echo "git version "
+git --version
+
+echo "---------------------"
+echo "php version "
+php -version
+
+echo "---------------------"
+echo "htop version "
+htop -v
+
+echo "---------------------"
+echo "sublime version "
+subl --version
+
+echo "---------------------"
+echo "visual code version "
+code -v
+
+echo "---------------------"
+echo "Mysql version "
+mysql -V
+
+echo "---------------------"
+echo "Ngrok version "
+ngrok -v
+
+echo "---------------------"
+echo "postman instalado "
